@@ -16,7 +16,7 @@ func (h IncomingHandler) Run() {
 
 func (h IncomingHandler) createRouter() *mux.Router {
 	router := mux.NewRouter()
-	router.HandleFunc("", h.FormPostHandler).Methods("POST")
+	router.HandleFunc("/", h.FormPostHandler).Methods("POST")
 	router.HandleFunc("/admin", h.AdminGetHandler).Methods("GET")
 	return router
 }
