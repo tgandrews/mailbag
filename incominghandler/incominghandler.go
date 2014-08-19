@@ -25,6 +25,7 @@ func (h IncomingHandler) FormPostHandler(w http.ResponseWriter, r *http.Request)
 	log.Printf("URI: %s", r.RequestURI)
 	log.Printf("Referer: %s", r.Referer())
 	log.Printf("User Agent: %s", r.UserAgent())
+	log.Printf("Email: %s", r.PostFormValue("email"))
 }
 
 func (h IncomingHandler) AdminGetHandler(w http.ResponseWriter, r *http.Request) {
