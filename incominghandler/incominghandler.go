@@ -22,7 +22,9 @@ func (h IncomingHandler) createRouter() *mux.Router {
 }
 
 func (h IncomingHandler) FormPostHandler(w http.ResponseWriter, r *http.Request) {
-	log.Printf("User Agent: %s | URI: %s", r.UserAgent(), r.RequestURI)
+	log.Printf("URI: %s", r.RequestURI)
+	log.Printf("Referer: %s", r.Referer())
+	log.Printf("User Agent: %s", r.UserAgent())
 }
 
 func (h IncomingHandler) AdminGetHandler(w http.ResponseWriter, r *http.Request) {
