@@ -19,3 +19,12 @@ type Subscriber struct {
 	// The email address
 	EmailAddress string
 }
+
+// ToCSV turns the subscriber to the format for CSV
+func (s Subscriber) ToCSV() []string {
+	return []string{
+		s.EmailAddress,
+		s.SubscribeTime.String(),
+		s.UserAgent,
+		s.IPAddress}
+}

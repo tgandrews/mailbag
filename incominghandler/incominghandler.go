@@ -36,6 +36,12 @@ func (h IncomingHandler) formPostHandler(w http.ResponseWriter, r *http.Request)
 
 	log.Printf("URI: %s", r.RequestURI)
 	log.Printf("Subscriber: %v", subscriber)
+
+	store := s.Store{}
+	err := store.Save(subscriber)
+	if err != nil {
+		log.Printf("%v", err)
+	}
 }
 
 func (h IncomingHandler) adminGetHandler(w http.ResponseWriter, r *http.Request) {
